@@ -11,3 +11,5 @@ jobs:
     uses: dixyes-bot/lwmbs-play/.github/workflows/linux-new.yml@play
     with:
       uploadRelease: true
+      workflowRepo: dixyes-bot/lwmbs-play
+      workflowRev: ${{ github.job_workflow_sha }}
