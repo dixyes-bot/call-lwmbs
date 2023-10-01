@@ -6,12 +6,18 @@ on:
   schedule:
     - cron: '33 0 * * *'
 
+env:
+  workflowRepo: dixyes-bot/lwmbs-play
+  workflowRev: play
+
 jobs:
   build-linux:
+    # this donot support use env context
     uses: dixyes-bot/lwmbs-play/.github/workflows/linux-new.yml@play
     permissions:
       contents: write
     with:
       uploadRelease: true
-      workflowRepo: dixyes-bot/lwmbs-play
-      workflowRev: ${{ github.job_workflow_sha }}
+      # i just cannot get these in reusable workflow, so do this
+      workflowRepo: ${{ env.workflowRepo }}
+      workflowRev: ${{ env.workflowRev }}
