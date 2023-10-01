@@ -10,4 +10,4 @@ jobs:
   build-linux:
     uses: dixyes-bot/lwmbs-play/.github/workflows/linux-new.yml@play
     with:
-      uploadRelease: "true"
+      uploadRelease: true
