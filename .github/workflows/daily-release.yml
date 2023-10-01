@@ -1,0 +1,17 @@
+
+name: Daily release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '33 0 * * *'
+
+env:
+  branch: play
+  repo: dixyes-bot/lwmbs
+
+jobs:
+  build-linux:
+    uses: ${{ env.repo }}/.github/workflows/linux-new.yml@${{ env.branch }}
+    with:
+      uploadRelease: "true"
