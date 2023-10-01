@@ -1,0 +1,39 @@
+
+name: Daily release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '33 0 * * *'
+
+jobs:
+  build-linux:
+    # this donot support use env context
+    uses: dixyes/lwmbs/.github/workflows/linux-new.yml@master
+    permissions:
+      contents: write
+    with:
+      uploadRelease: true
+      # i just cannot get these in reusable workflow, so do this
+      workflowRepo: dixyes/lwmbs
+      workflowRev: master
+  build-windows:
+    # this donot support use env context
+    uses: dixyes/lwmbs/.github/workflows/windows-new.yml@master
+    permissions:
+      contents: write
+    with:
+      uploadRelease: true
+      # i just cannot get these in reusable workflow, so do this
+      workflowRepo: dixyes/lwmbs
+      workflowRev: master
+  build-macos:
+    # this donot support use env context
+    uses: dixyes/lwmbs/.github/workflows/macos-new.yml@master
+    permissions:
+      contents: write
+    with:
+      uploadRelease: true
+      # i just cannot get these in reusable workflow, so do this
+      workflowRepo: dixyes/lwmbs
+      workflowRev: master
