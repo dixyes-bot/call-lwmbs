@@ -9,6 +9,8 @@ on:
 jobs:
   build-linux:
     uses: dixyes-bot/lwmbs-play/.github/workflows/linux-new.yml@play
+    permissions:
+      contents: write
     with:
       uploadRelease: true
       workflowRepo: dixyes-bot/lwmbs-play
