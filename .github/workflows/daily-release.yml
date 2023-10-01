@@ -6,10 +6,6 @@ on:
   schedule:
     - cron: '33 0 * * *'
 
-env:
-  workflowRepo: dixyes-bot/lwmbs-play
-  workflowRev: play
-
 jobs:
   build-linux:
     # this donot support use env context
@@ -19,5 +15,5 @@ jobs:
     with:
       uploadRelease: true
       # i just cannot get these in reusable workflow, so do this
-      workflowRepo: ${{ env.workflowRepo }}
-      workflowRev: ${{ env.workflowRev }}
+      workflowRepo: dixyes-bot/lwmbs-play
+      workflowRev: play
